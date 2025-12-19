@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>褒めサイト制作ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <button type="button" class="menu-btn" onclick="toggleSidebar()">💡 ヒント集</button>
+
+    <div id="hint-sidebar">
+        <div class="sidebar-header" id="sidebar-head">
+            <span style="font-weight:bold; color:#888;">ヒント図鑑</span>
+            <button type="button" onclick="toggleSidebar()" style="border:none; background:none; font-size:1.2em;"
+                aria-label="閉じる">×</button>
+        </div>
+        <div class="sidebar-content" id="category-view">
+            <button type="button" class="cat-btn" onclick="showHints('memory')">📸 思い出</button>
+            <button type="button" class="cat-btn" onclick="showHints('looks')">✨ 見た目</button>
+            <button type="button" class="cat-btn" onclick="showHints('personality')">😊 性格</button>
+            <button type="button" class="cat-btn" onclick="showHints('action')">🏃 行動</button>
+            <button type="button" class="cat-btn" onclick="showHints('thanks')">🙏 感謝</button>
+            <button type="button" class="cat-btn" onclick="showHints('family')">🏠 家族思い出</button>
+            <button type="button" class="cat-btn" onclick="showHints('friends')">🤝 友達思い出</button>
+            <button type="button" class="cat-btn" onclick="showHints('oshi')">👑 推し活</button>
+            <button type="button" class="cat-btn" onclick="showHints('humor')">😂 ユーモア</button>
+        </div>
+        <div id="hint-detail-view" style="display:none; padding:10px;">
+            <div id="hint-items-container"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="setup-section">
+            <h2>褒めサイト制作ツール</h2>
+            <label>サイトのタイトル</label>
+            <input type="text" id="in-title" placeholder="例：〇〇の好きなところ">
+
+            <span class="rule-note">※答えは「ひらがな」で統一するとスムーズだよ！</span>
+            <div id="qa-container">
+                <div class="qa-pair">
+                    <label>秘密の質問 1</label>
+                    <input type="text" class="in-q" placeholder="例：初めて会った場所は？">
+                    <label>答え 1</label>
+                    <input type="text" class="in-a" placeholder="ひらがなで入力してね！">
+                </div>
+            </div>
+            <button type="button" class="add-btn" onclick="addQA()" aria-label="質問を追加">+</button>
+
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                <label>メッセージリスト</label>
+                <span class="hint-guide" onclick="toggleSidebar()">💡 ヒントを見る</span>
+            </div>
+            <textarea id="in-messages" placeholder="1行に1つずつ。迷ったらヒント集を見てね！"></textarea>
+
+            <button type="button" class="main-btn" onclick="generateSite()">サイトを生成する</button>
+        </div>
+
+        <div id="viewer-section">
+            <h2 id="view-title"></h2>
+            <div id="auth-area"></div>
+            <div id="content-sub-section" style="display:none;">
+                <div id="message-display"></div>
+                <button type="button" class="main-btn" onclick="showRandomMessage()">次のメッセージ</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

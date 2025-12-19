@@ -1,0 +1,194 @@
+:root {
+    --main-color: #d81b60;
+    --bg-color: #fff5f7;
+    --accent-color: #ff85a2;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    margin: 0;
+    color: #444;
+}
+
+/* メニューボタン */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 998;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* サイドバー */
+#hint-sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100%;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+#hint-sidebar.open {
+    right: 0;
+}
+
+.sidebar-header {
+    background: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-content {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cat-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: none;
+    background: #fff;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.hint-item {
+    padding: 12px;
+    font-size: 0.85em;
+    cursor: pointer;
+    border-bottom: 1px solid #f9f9f9;
+    line-height: 1.4;
+    color: #666;
+}
+
+/* コンテナ */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 15px 35px rgba(216, 27, 96, 0.1);
+}
+
+h2 {
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+}
+
+label {
+    display: block;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #aaa;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    background: #fafafa;
+}
+
+/* QAペア */
+.qa-pair {
+    background: #fffafb;
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px dashed #ffccdd;
+    margin-bottom: 15px;
+}
+
+.add-btn {
+    background: #ffccdd;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.hint-guide {
+    font-size: 0.75em;
+    color: var(--main-color);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.main-btn {
+    width: 100%;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* ビューワーセクション */
+#viewer-section {
+    display: none;
+    text-align: center;
+}
+
+.auth-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+}
+
+#message-display {
+    min-height: 120px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: #fff;
+    border: 2px solid var(--bg-color);
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    color: var(--main-color);
+}
+
+.rule-note {
+    font-size: 0.7em;
+    color: #d81b60;
+    margin-bottom: 10px;
+    display: block;
+}
